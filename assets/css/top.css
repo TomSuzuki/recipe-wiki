@@ -1,0 +1,64 @@
+#top_frame {
+    display  : flex;
+    flex-wrap: wrap;
+    width    : 100%;
+}
+
+.recipe_select_frame {
+    display         : grid;
+    width           : 240px;
+    position        : relative;
+    background-color: var(--color_mildChocolate);
+    padding         : 1em;
+    box-sizing      : border-box;
+    border-radius   : .5em;
+    padding-top     : 1em;
+    margin          : 1em 1em 1.5em;
+    text-align      : center;
+    transition      : box-shadow .25s ease-in-out, transform .25s ease-in-out;
+    transform-origin: top;
+    box-shadow      : 0 5px 5px rgba(0, 0, 0, .2);
+}
+
+.recipe_select_frame:hover {
+    cursor    : pointer;
+    box-shadow: 0 12px 12px rgba(0, 0, 0, .5);
+    transform : scaleY(.97);
+}
+
+.recipe_select_frame::after {
+    content         : "";
+    height          : 1.5em;
+    margin          : 0;
+    position        : absolute;
+    top             : -1em;
+    left            : 50%;
+    background-color: var(--color_chicCloud);
+    border-left     : 2px dotted rgba(0, 0, 0, .3);
+    border-right    : 2px dotted rgba(0, 0, 0, .3);
+    padding         : .25em 2em;
+    transform       : rotate(-3deg) translateX(-50%);
+    width           : 3em;
+    transition      : transform .25s ease-in-out;
+    opacity         : .8;
+
+    background-image: linear-gradient(-45deg, var(--color_kuriIro) 25%, transparent 25%,
+            transparent 50%, var(--color_kuriIro) 50%, var(--color_kuriIro) 75%, transparent 75%, transparent 100%);
+    background-size: 20px 20px;
+}
+
+.recipe_select_frame h3 {
+    color        : var(--color_snowWhite);
+    overflow     : hidden;
+    white-space  : nowrap;
+    text-overflow: ellipsis;
+    max-width    : 100%;
+    padding      : 0;
+    margin       : 1em 0 .5em;
+    box-sizing   : border-box;
+}
+
+.recipe_select_frame img {
+    width        : 100%;
+    border-radius: .5em;
+}
