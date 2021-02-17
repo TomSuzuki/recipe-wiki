@@ -1,0 +1,24 @@
+[GIN-debug] [WARNING] Creating an Engine instance with the Logger and Recovery middleware already attached.
+
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] Loaded HTML Templates (5): 
+	- index.html
+	- menu.html
+	- menu
+	- top.html
+	- 
+
+[GIN-debug] GET    /assets/*filepath         --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (3 handlers)
+[GIN-debug] HEAD   /assets/*filepath         --> github.com/gin-gonic/gin.(*RouterGroup).createStaticHandler.func1 (3 handlers)
+[GIN-debug] GET    /top                      --> github.com/TomSuzuki/recipe-wiki/pkg/controller.TopPageController (3 handlers)
+[GIN-debug] GET    /                         --> github.com/TomSuzuki/recipe-wiki/pkg/controller.TopPageController (3 handlers)
+[GIN-debug] Listening and serving HTTP on :8220
+[GIN] 2021/02/17 - 22:40:43 | 200 |       998.6µs |             ::1 | GET      "/"
+[GIN] 2021/02/17 - 22:40:43 | 404 |            0s |             ::1 | GET      "/assets/css/style.css"
+[GIN] 2021/02/17 - 22:40:44 | 404 |            0s |             ::1 | GET      "/assets/favicon.ico"
+[GIN] 2021/02/17 - 22:41:28 | 200 |      1.0007ms |             ::1 | GET      "/"
+[GIN] 2021/02/17 - 22:41:28 | 200 |     71.9936ms |             ::1 | GET      "/assets/css/style.css"
+[GIN] 2021/02/17 - 22:41:28 | 404 |            0s |             ::1 | GET      "/assets/favicon.ico"
