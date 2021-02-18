@@ -1,23 +1,33 @@
 <div id="write_frame">
     <div id="write_frame_details">
         <h4>情報</h4>
-        <input id="write_name" placeholder="レシピ名" type="text"><br><br>
+        <input id="write_name" placeholder="レシピ名" type="text" value="{{.RecipeData.Name}}"><br><br>
         <label>イメージ：<br>
             <input id="write_image" placeholder="イメージ画像" type="file" onchange="imagePreview()">
             <div id="write_preview_outer">
-                <img id="write_preview">
+                <img id="write_preview" src="/data/{{.RecipeData.ImagePath}}"
+                    onerror="this.onerror = null; this.src=`/assets/img/noimage_${1 + Math.floor(Math.random() * Math.floor(4))}.jpg`;">
             </div>
         </label>
+        <select id="write_evaluation">
+            <option value="1" {{if eq .RecipeData.Evaluation 1 }}selected{{end}}>おすすめ度：★☆☆☆☆</option>
+            <option value="2" {{if eq .RecipeData.Evaluation 2 }}selected{{end}}>おすすめ度：★★☆☆☆</option>
+            <option value="3" {{if eq .RecipeData.Evaluation 3 }}selected{{end}}>おすすめ度：★★★☆☆</option>
+            <option value="4" {{if eq .RecipeData.Evaluation 4 }}selected{{end}}>おすすめ度：★★★★☆</option>
+            <option value="5" {{if eq .RecipeData.Evaluation 5 }}selected{{end}}>おすすめ度：★★★★★</option>
+        </select>
     </div>
     <div id="write_frame_ingredients">
         <h4>材料</h4>
         <textarea placeholder="卵,2個
-牛乳,200ml"></textarea>
+牛乳,200ml">{{range .RecipeData.IngredientList}}{{.Name}},{{.Quantity}}
+{{end}}</textarea>
     </div>
     <div id="write_frame_steps">
         <h4>手順</h4>
         <textarea placeholder="牛乳を電子レンジで30秒温めます。
-次に、..."></textarea>
+次に、...">{{range .RecipeData.StepList}}{{.}}
+{{end}}</textarea>
     </div>
     <div id="write_frame_ui">
         <a class="button" href="javascript:saveRecipe();">保存</a>

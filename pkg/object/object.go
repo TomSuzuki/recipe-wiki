@@ -20,6 +20,7 @@ type RecipePageData struct {
 
 // WritePageData ...編集ページに必要なデータです。
 type WritePageData struct {
+	RecipeData RecipeData
 }
 
 // RecipeData ...レシピのデータです。
