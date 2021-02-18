@@ -15,6 +15,7 @@ type TopPage struct {
 
 // RecipeData ...レシピのデータです。
 type RecipeData struct {
+	ID             int          `json:"id"`
 	Name           string       `json:"name"`
 	IngredientList []Ingredient `json:"ingredients"`
 	StepList       []string     `json:"steps"`

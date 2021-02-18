@@ -18,6 +18,7 @@
     transition      : box-shadow .25s ease-in-out, transform .25s ease-in-out;
     transform-origin: top;
     box-shadow      : 0 5px 5px rgba(0, 0, 0, .2);
+    text-decoration : none;
 }
 
 .recipe_select_frame:hover {

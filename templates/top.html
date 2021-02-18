@@ -1,6 +1,6 @@
 <div id="top_frame">
     {{range .RecipeDataList}}
-    <a class="recipe_select_frame">
+    <a class="recipe_select_frame" href="/recipe?id={{.ID}}">
         <h3>{{.Name}}</h3>
         <img src="/data/{{.ImagePath}}"
             onerror="this.onerror = null; this.src=`/assets/img/noimage_${1 + Math.floor(Math.random() * Math.floor(4))}.jpg`;">
