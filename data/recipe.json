@@ -4,11 +4,24 @@
             "name": "スクランブルエッグ",
             "ingredients": [
                 {
-                    "卵": "2個",
-                    "塩": "適量",
-                    "ケチャップ": "適量",
-                    "バター": "適量",
-                    "砂糖": "適量"
+                    "ingredient_name": "卵",
+                    "ingredient_quantity": "2個"
+                },
+                {
+                    "ingredient_name": "塩",
+                    "ingredient_quantity": "適量"
+                },
+                {
+                    "ingredient_name": "ケチャップ",
+                    "ingredient_quantity": "適量"
+                },
+                {
+                    "ingredient_name": "バター",
+                    "ingredient_quantity": "適量"
+                },
+                {
+                    "ingredient_name": "砂糖",
+                    "ingredient_quantity": "適量"
                 }
             ],
             "steps": [
@@ -23,9 +36,7 @@
         },
         {
             "name": "バターチキンカレー",
-            "ingredients": [
-                {}
-            ],
+            "ingredients": [],
             "steps": [],
             "memo": [],
             "evaluation": 4,

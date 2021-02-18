@@ -6,7 +6,7 @@ import (
 )
 
 // Router ...ルーティングを行います。
-func Router() (router *gin.Engine) {
+func Router(ctrl controller.Controller) (router *gin.Engine) {
 
 	// root
 	router = gin.Default()
@@ -18,7 +18,7 @@ func Router() (router *gin.Engine) {
 	// router.GET("/page/status", controller.PageStatusController)
 	// router.GET("/error", controller.ErrorPageController)
 	// router.GET("/page", controller.WordPageController)
-	router.GET("/top", controller.TopPageController)
+	router.GET("/top", ctrl.TopPageController)
 	// router.GET("/write", controller.WritePageController)
 	// router.GET("/search", controller.SearchPageController)
 	// router.GET("/edit", controller.EditPageController)
@@ -28,7 +28,7 @@ func Router() (router *gin.Engine) {
 	// router.DELETE("/page", controller.DeletePageController)
 
 	// no route
-	router.GET("", controller.TopPageController)
+	router.GET("", ctrl.TopPageController)
 	// router.NoRoute(controller.ErrorPageController)
 
 	return
