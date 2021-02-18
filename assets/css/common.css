@@ -1,0 +1,70 @@
+.recipe_img {
+    width           : 100%;
+    background-color: var(--color_snowWhite);
+    padding         : 5%;
+    padding-bottom  : 12.5%;
+    box-sizing      : border-box;
+    filter          : sepia(.5) saturate(.8) contrast(.9);
+}
+
+.tape {
+    position: relative;
+}
+
+.tape::after {
+    content         : "";
+    height          : 1.5em;
+    margin          : 0;
+    position        : absolute;
+    top             : -1.25em;
+    left            : 50%;
+    background-color: var(--color_snowWhite);
+    border-left     : 2px dotted rgba(0, 0, 0, .3);
+    border-right    : 2px dotted rgba(0, 0, 0, .3);
+    padding         : .25em 2em;
+    transform       : rotate(-3deg) translateX(-50%);
+    width           : 3em;
+    transition      : transform .25s ease-in-out;
+    opacity         : .8;
+}
+
+.button {
+    position        : relative;
+    color           : var(--color_snowWhite);
+    border          : 2px solid var(--color_snowWhite);
+    padding         : 1em 2em;
+    border-radius   : .5em;
+    transition      : color .25s, background-color .25s, border-color .25s;
+    overflow        : hidden;
+    display         : inline-block;
+    background-color: var(--color_mildChocolate);
+    font-weight     : bold;
+    box-sizing      : border-box;
+    box-shadow      : 0 2px 4px 0 rgba(0, 0, 0, .5);
+    text-decoration : none;
+}
+
+.button:hover {
+    cursor          : pointer;
+    background-color: var(--color_snowWhite);
+    color           : var(--color_mildChocolate);
+    border-color    : var(--color_mildChocolate);
+}
+
+.button::before {
+    position  : absolute;
+    top       : 0;
+    left      : -75%;
+    z-index   : 2;
+    display   : inline-block;
+    content   : '';
+    width     : 50%;
+    height    : 100%;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .3) 100%);
+    transform : skewX(-25deg);
+    transition: left .5s;
+}
+
+.button:hover::before {
+    left: 125%;
+}

@@ -8,9 +8,14 @@ type PageData struct {
 	PageTitle string
 }
 
-// TopPage ...トップページの表示に必要なデータです。
-type TopPage struct {
+// TopPageData ...トップページの表示に必要なデータです。
+type TopPageData struct {
 	RecipeDataList []RecipeData
+}
+
+// RecipePageData ...レシピページに必要なデータです。
+type RecipePageData struct {
+	RecipeData RecipeData
 }
 
 // RecipeData ...レシピのデータです。

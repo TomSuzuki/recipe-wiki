@@ -27,6 +27,11 @@ func createHTML(file string, data interface{}) template.HTML {
 }
 
 // TopPageView ...トップページの表示。
-func TopPageView(data object.TopPage) template.HTML {
+func TopPageView(data object.TopPageData) template.HTML {
 	return createHTML("templates/top.html", data)
+}
+
+// RecipePageView ...レシピページの表示。
+func RecipePageView(data object.RecipePageData) template.HTML {
+	return createHTML("templates/recipe.html", data)
 }
