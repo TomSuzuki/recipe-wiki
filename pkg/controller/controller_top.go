@@ -10,7 +10,7 @@ import (
 func (ctrl *Controller) TopPageController(c *gin.Context) {
 
 	// dto
-	var data object.TopPage
+	var data object.TopPageData
 	data.RecipeDataList = ctrl.ServerData.TopRecipeList()
 
 	// view

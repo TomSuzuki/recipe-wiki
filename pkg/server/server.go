@@ -15,21 +15,13 @@ func Router(ctrl controller.Controller) (router *gin.Engine) {
 	router.Static("/data", "./data")
 
 	// route
-	// router.GET("/page/status", controller.PageStatusController)
-	// router.GET("/error", controller.ErrorPageController)
-	// router.GET("/page", controller.WordPageController)
 	router.GET("/top", ctrl.TopPageController)
-	// router.GET("/write", controller.WritePageController)
-	// router.GET("/search", controller.SearchPageController)
-	// router.GET("/edit", controller.EditPageController)
-
-	// router.POST("/save", controller.SaveController)
-
-	// router.DELETE("/page", controller.DeletePageController)
+	router.GET("/recipe", ctrl.RecipePageController)
+	router.GET("/recipe/data", ctrl.RecipeDataController)
 
 	// no route
 	router.GET("", ctrl.TopPageController)
-	// router.NoRoute(controller.ErrorPageController)
+	//router.NoRoute(ctrl.ErrorPageController)
 
 	return
 }
