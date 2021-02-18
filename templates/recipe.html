@@ -1,3 +1,31 @@
 <div id="frame_recipe">
-    <p>Now Loading...</p>
+    <div id="recipe_details">
+        <h1>{{.RecipeData.Name}}</h1>
+        <img src="/data/{{.RecipeData.ImagePath}}"
+            onerror="this.onerror = null; this.src=`/assets/img/noimage_${1 + Math.floor(Math.random() * Math.floor(4))}.jpg`;">
+    </div>
+    <table id="recipe_ingredients">
+        <thead>
+            <tr>
+                <th colspan="2">材料</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{range .RecipeData.IngredientList}}
+            <tr>
+                <td>{{.Name}}</td>
+                <td>{{.Quantity}}</td>
+            </tr>
+            {{else}}
+            <tr>
+                <td colspan="2">ありません。</td>
+            </tr>
+            {{end}}
+        </tbody>
+    </table>
+    <ol id="recipe_steps">
+        {{range .RecipeData.StepList}}
+        <li>{{.}}</li>
+        {{end}}
+    </ol>
 </div>

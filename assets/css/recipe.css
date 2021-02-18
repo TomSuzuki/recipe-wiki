@@ -1,0 +1,24 @@
+#frame_recipe {
+    display              : grid;
+    grid-template-columns: 1fr 1fr 2fr;
+}
+
+#frame_recipe * {
+    max-width: 100%;
+}
+
+#recipe_details {
+    text-align: center;
+}
+
+#recipe_ingredients {
+    padding   : 0;
+    margin    : 1em;
+    text-align: center;
+}
+
+#recipe_ingredients tbody tr {
+    display              : grid;
+    grid-template-columns: 1fr 1fr;
+    border-bottom        : 1px dotted var(--color_mildChocolate);
+}
