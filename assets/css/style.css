@@ -1,0 +1,12 @@
+:root {
+    --color_mildChocolate: #aa998a;
+    --color_milktea      : #eadfca;
+    --color_dolphinGray  : #9ec3bc;
+    --color_chicCloud    : #e8ebe7;
+    --color_snowWhite    : #F4FBFE;
+    --color_kuriIro      : #433634;
+}
+
+* {
+    font-weight: bold;
+}

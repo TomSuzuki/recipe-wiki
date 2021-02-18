@@ -1,0 +1,30 @@
+#menu {
+    background-color: var(--color_mildChocolate);
+}
+
+#menu ul {
+    list-style-type: none;
+    margin         : 1px 0;
+    padding        : 0;
+    text-align     : left;
+}
+
+#menu li {
+    width: 100%;
+}
+
+#menu a {
+    display         : inline-block;
+    width           : 100%;
+    padding         : .5em 1em;
+    margin          : .5px 0;
+    background-color: var(--color_kuriIro);
+    border-left     : .5em solid var(--color_dolphinGray);
+    color           : var(--color_milktea);
+    text-decoration : none;
+    transition      : border-left .25s;
+}
+
+#menu a:hover {
+    border-left: 1.5em solid var(--color_dolphinGray);
+}

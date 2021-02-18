@@ -1,0 +1,25 @@
+#index {
+    display              : grid;
+    grid-template-columns: 8em 1fr;
+    grid-template-rows   : 2em 1fr;
+    grid-template-areas  : ". top""menu frame";
+    background-color     : var(--color_dolphinGray);
+    min-height           : 100vh;
+    padding              : 0;
+    margin               : 0;
+}
+
+#frame {
+    grid-area       : frame;
+    background-color: var(--color_chicCloud);
+    padding         : 2em;
+}
+
+#index_top {
+    grid-area       : top;
+    background-color: var(--color_mildChocolate);
+}
+
+#menu {
+    grid-area: menu;
+}

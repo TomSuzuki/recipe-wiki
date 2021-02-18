@@ -12,6 +12,7 @@ func Router() (router *gin.Engine) {
 	router = gin.Default()
 	router.LoadHTMLGlob("templates/*.html")
 	router.Static("/assets", "./assets")
+	router.Static("/data", "./data")
 
 	// route
 	// router.GET("/page/status", controller.PageStatusController)
