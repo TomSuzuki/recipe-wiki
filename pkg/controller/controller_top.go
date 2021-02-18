@@ -9,11 +9,9 @@ import (
 // TopPageController ...トップページの処理を行います。
 func (ctrl *Controller) TopPageController(c *gin.Context) {
 
-	// get recipe list
-	ctrl.ServerData.TopRecipeList()
-
 	// dto
 	var data object.TopPage
+	data.RecipeDataList = ctrl.ServerData.TopRecipeList()
 
 	// view
 	view.NewView(c, object.PageData{

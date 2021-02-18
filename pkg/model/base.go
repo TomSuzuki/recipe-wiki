@@ -19,7 +19,7 @@ func loadRecipe() ServerData {
 // saveRecipe ...変更を保存します。変更が完了したときのみ使用します。（通常 GET メソッドでの呼び出し時は使用しません。）
 func (sd *ServerData) saveRecipe() error {
 	bytes, _ := json.Marshal(sd)
-	return ioutil.WriteFile(config.RecipeFile+".test", bytes, 0666)
+	return ioutil.WriteFile(config.RecipeFile, bytes, 0666)
 }
 
 // ServerData ...とりあえず全てのデータを持ちます。

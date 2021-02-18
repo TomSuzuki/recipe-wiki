@@ -60,5 +60,8 @@
 
 .recipe_select_frame img {
     width        : 100%;
-    border-radius: .5em;
+    border       : 8px solid var(--color_snowWhite);
+    border-bottom: 24px solid var(--color_snowWhite);
+    box-sizing   : border-box;
+    filter       : sepia(.3) saturate(.8) contrast(.9);
 }
