@@ -6,11 +6,12 @@ import (
 	"net/http"
 
 	"github.com/TomSuzuki/recipe-wiki/pkg/config"
+	"github.com/TomSuzuki/recipe-wiki/pkg/object"
 	"github.com/gin-gonic/gin"
 )
 
 // NewView ...表示する。
-func NewView(c *gin.Context, data PageData) {
+func NewView(c *gin.Context, data object.PageData) {
 	if data.PageTitle == "" {
 		data.PageTitle = config.ServiceName
 	}
@@ -26,6 +27,6 @@ func createHTML(file string, data interface{}) template.HTML {
 }
 
 // TopPageView ...トップページの表示。
-func TopPageView(data TopPage) template.HTML {
+func TopPageView(data object.TopPage) template.HTML {
 	return createHTML("templates/top.html", data)
 }

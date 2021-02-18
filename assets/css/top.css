@@ -18,6 +18,7 @@
     transition      : box-shadow .25s ease-in-out, transform .25s ease-in-out;
     transform-origin: top;
     box-shadow      : 0 5px 5px rgba(0, 0, 0, .2);
+    text-decoration : none;
 }
 
 .recipe_select_frame:hover {
@@ -60,5 +61,8 @@
 
 .recipe_select_frame img {
     width        : 100%;
-    border-radius: .5em;
+    border       : 8px solid var(--color_snowWhite);
+    border-bottom: 24px solid var(--color_snowWhite);
+    box-sizing   : border-box;
+    filter       : sepia(.3) saturate(.8) contrast(.9);
 }
