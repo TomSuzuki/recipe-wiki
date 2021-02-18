@@ -1,24 +1,84 @@
 #frame_recipe {
     display              : grid;
+    grid-template-rows   : auto auto;
     grid-template-columns: 1fr 1fr 2fr;
+    grid-template-areas  : "recipe_details recipe_ingredients recipe_steps"". . recipe_edit";
+    position             : relative;
 }
 
 #frame_recipe * {
-    max-width: 100%;
+    max-width : 100%;
+    box-sizing: border-box;
+}
+
+#recipe_edit {
+    grid-area : recipe_edit;
+    text-align: right;
+    padding   : .5em;
+    box-sizing: border-box;
 }
 
 #recipe_details {
-    text-align: center;
+    grid-area    : recipe_details;
+    text-align   : center;
+    padding      : 1em;
+    box-sizing   : border-box;
+    border-radius: 1em;
+    color        : var(--color_kuriIro);
+    position     : relative;
+}
+
+#recipe_details h1 {
+    margin-bottom: 1.5em;
+}
+
+#recipe_details img {
+    transform : rotate(2deg);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .15);
 }
 
 #recipe_ingredients {
-    padding   : 0;
-    margin    : 1em;
-    text-align: center;
+    padding: 1em;
+}
+
+#recipe_ingredients table {
+    grid-area       : recipe_ingredients;
+    padding         : 2em 1em;
+    border-radius   : 1em;
+    text-align      : center;
+    background-color: var(--color_snowWhite);
+    color           : var(--color_kuriIro);
+    border          : 2px dashed var(--color_dolphinGray);
+    height          : 100%;
+    width           : 100%;
+
+}
+
+#recipe_ingredients thead th {
+    display      : block;
+    border-bottom: 1px solid var(--color_mildChocolate);
+    margin       : 0 1em 1em;
 }
 
 #recipe_ingredients tbody tr {
     display              : grid;
     grid-template-columns: 1fr 1fr;
     border-bottom        : 1px dotted var(--color_mildChocolate);
+}
+
+#recipe_steps {
+    grid-area       : recipe_steps;
+    background-color: var(--color_snowWhite);
+    color           : var(--color_kuriIro);
+    border          : 2px dashed var(--color_dolphinGray);
+    border-radius   : 1em;
+    position        : relative;
+    padding         : 3em 1em 1em 3em;
+    box-sizing      : border-box;
+    height          : calc(100%-2em);
+    margin          : 1em;
+}
+
+#recipe_steps li {
+    padding-bottom: 1.5em;
 }
