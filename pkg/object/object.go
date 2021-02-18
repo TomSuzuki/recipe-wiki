@@ -18,6 +18,10 @@ type RecipePageData struct {
 	RecipeData RecipeData
 }
 
+// WritePageData ...編集ページに必要なデータです。
+type WritePageData struct {
+}
+
 // RecipeData ...レシピのデータです。
 type RecipeData struct {
 	ID             int          `json:"id"`
