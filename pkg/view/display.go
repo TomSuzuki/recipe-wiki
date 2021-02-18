@@ -35,3 +35,8 @@ func TopPageView(data object.TopPageData) template.HTML {
 func RecipePageView(data object.RecipePageData) template.HTML {
 	return createHTML("templates/recipe.html", data)
 }
+
+// WritePageView ...編集ページの表示。
+func WritePageView(data object.WritePageData) template.HTML {
+	return createHTML("templates/write.html", data)
+}
