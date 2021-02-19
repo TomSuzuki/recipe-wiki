@@ -12,7 +12,8 @@
         <select id="write_evaluation">
             <option value="1" {{if eq .RecipeData.Evaluation 1 }}selected{{end}}>おすすめ度：★☆☆☆☆</option>
             <option value="2" {{if eq .RecipeData.Evaluation 2 }}selected{{end}}>おすすめ度：★★☆☆☆</option>
-            <option value="3" {{if eq .RecipeData.Evaluation 3 }}selected{{end}}>おすすめ度：★★★☆☆</option>
+            <option value="3" {{if or (eq .RecipeData.Evaluation 3) (eq .RecipeData.Evaluation 0)}}selected{{end}}>
+                おすすめ度：★★★☆☆</option>
             <option value="4" {{if eq .RecipeData.Evaluation 4 }}selected{{end}}>おすすめ度：★★★★☆</option>
             <option value="5" {{if eq .RecipeData.Evaluation 5 }}selected{{end}}>おすすめ度：★★★★★</option>
         </select>

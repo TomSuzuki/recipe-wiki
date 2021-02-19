@@ -31,7 +31,7 @@
                 </tr>
                 {{else}}
                 <tr>
-                    <td colspan="2">ありません。</td>
+                    <td colspan="2">記録がありません。</td>
                 </tr>
                 {{end}}
             </tbody>
@@ -40,6 +40,8 @@
     <ol id="recipe_steps">
         {{range .RecipeData.StepList}}
         <li>{{.}}</li>
+        {{else}}
+        <p>記録がありません。</p>
         {{end}}
     </ol>
 </div>

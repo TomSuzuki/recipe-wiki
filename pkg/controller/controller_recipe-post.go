@@ -80,5 +80,6 @@ func (ctrl *Controller) RecipePostController(c *gin.Context) {
 	ctrl.ServerData.SaveRecipeData(data)
 
 	// response
-	c.Status(http.StatusOK)
+	resData, _ := ctrl.ServerData.GetRecipeData(data.ID)
+	c.JSON(http.StatusOK, resData)
 }

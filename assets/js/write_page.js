@@ -9,6 +9,12 @@ function saveRecipe() {
     json["evaluation"] = Number(document.getElementById("write_evaluation").value);
     json["image_base64"] = "";
 
+    // error check
+    if (json["name"] === "") {
+        alert("レシピ名は必ず入力してください。");
+        return;
+    }
+
     // id
     let url = new URL(window.location.href);
     let id = url.searchParams.get("id");
@@ -45,10 +51,11 @@ function saveRecipe() {
     function send(json) {
         let text = JSON.stringify(json);
         let xhr = new XMLHttpRequest;
-        xhr.onload = function () {
-            alert("送信完了。");
+        xhr.onload = () => {
+            let json = JSON.parse(xhr.responseText);
+            location.href = `/recipe?id=${json["id"]}`
         };
-        xhr.onerror = function () {
+        xhr.onerror = () => {
             alert("送信エラーが発生しました。");
         }
         xhr.open('POST', "/recipe/data", true);
