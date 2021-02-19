@@ -13,6 +13,8 @@
     grid-area       : frame;
     background-color: var(--color_chicCloud);
     padding         : 2em;
+    box-sizing      : border-box;
+    width           : 100%;
 }
 
 #index_top {
@@ -27,11 +29,12 @@
 @media (max-width: 599px) {
     #index {
         grid-template-areas  : "top top""frame menu";
-        grid-template-columns: 1fr auto;
+        grid-template-columns: 1fr 2.5em;
         grid-template-rows   : 1em 1fr;
     }
 
     #frame {
+        margin : 0;
         padding: 1em;
     }
 }

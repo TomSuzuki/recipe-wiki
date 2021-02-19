@@ -29,6 +29,10 @@
         grid-template-areas: "markdown_title""markdown_edit""markdown";
     }
 
+    #markdown_title {
+        width: 100%;
+    }
+
     #markdown_edit,
     #markdown_save {
         text-align   : right;

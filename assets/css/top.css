@@ -12,14 +12,19 @@
 }
 
 #top_recipe_list {
-    width    : 100%;
-    display  : flex;
-    flex-wrap: wrap;
+    width                : 100%;
+    display              : grid;
+    grid-auto-flow       : row;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    grid-gap             : 1.5em 1em;
+    box-sizing           : border-box;
+    margin               : 0;
+    padding              : 0;
 }
 
 .recipe_select_frame {
     display         : grid;
-    width           : 240px;
+    width           : 100%;
     position        : relative;
     background-color: var(--color_mildChocolate);
     padding         : 1em;

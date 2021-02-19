@@ -37,7 +37,7 @@
 
 @media (max-width: 999px) {
     #menu {
-        width: auto;
+        width: 2.5em;
     }
 
     #menu li {
