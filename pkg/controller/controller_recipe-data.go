@@ -12,7 +12,7 @@ func (ctrl *Controller) RecipeDataController(c *gin.Context) {
 	// query
 	id, err := service.QueryInt(c, "id")
 	if err != nil {
-		c.String(http.StatusBadRequest, "")
+		c.Status(http.StatusBadRequest)
 		return
 	}
 

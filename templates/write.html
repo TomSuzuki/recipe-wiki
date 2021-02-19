@@ -19,13 +19,13 @@
     </div>
     <div id="write_frame_ingredients">
         <h4>材料</h4>
-        <textarea placeholder="卵,2個
+        <textarea id="write_ingredients" placeholder="卵,2個
 牛乳,200ml">{{range .RecipeData.IngredientList}}{{.Name}},{{.Quantity}}
 {{end}}</textarea>
     </div>
     <div id="write_frame_steps">
         <h4>手順</h4>
-        <textarea placeholder="牛乳を電子レンジで30秒温めます。
+        <textarea id="write_steps" placeholder="牛乳を電子レンジで30秒温めます。
 次に、...">{{range .RecipeData.StepList}}{{.}}
 {{end}}</textarea>
     </div>

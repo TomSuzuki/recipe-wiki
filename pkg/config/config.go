@@ -5,3 +5,6 @@ const ServiceName = "recipe wiki"
 
 // RecipeFile ...データを保存するファイル。
 const RecipeFile = "./data/recipe.json"
+
+// MediaFolder ...画像を保存する場所です。
+const MediaFolder = "./data/"
