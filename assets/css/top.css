@@ -79,6 +79,13 @@
         grid-template-columns: repeat(auto-fill, minmax(128px, 1fr));
         grid-gap             : 1.5em 1em;
         box-sizing           : border-box;
+        margin               : 0;
+        padding              : 0;
+    }
+
+    #top_search input {
+        width     : 100%;
+        box-sizing: border-box;
     }
 
     .recipe_select_frame {
