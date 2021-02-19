@@ -10,6 +10,7 @@ type PageData struct {
 
 // TopPageData ...トップページの表示に必要なデータです。
 type TopPageData struct {
+	Keyword        string
 	RecipeDataList []RecipeData
 }
 

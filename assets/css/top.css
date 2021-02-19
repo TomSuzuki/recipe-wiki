@@ -1,7 +1,19 @@
 #top_frame {
+    width: 100%;
+}
+
+#top_search {
+    margin-bottom: 2em;
+}
+
+#top_search input {
+    font-size: x-large;
+}
+
+#top_recipe_list {
+    width    : 100%;
     display  : flex;
     flex-wrap: wrap;
-    width    : 100%;
 }
 
 .recipe_select_frame {

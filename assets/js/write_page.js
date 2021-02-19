@@ -45,8 +45,6 @@ function saveRecipe() {
     if (img.length > 0) fr.readAsDataURL(img[0]);
     else send(json);
 
-    console.log(json["ingredients"]);
-
     return;
 
     // send json

@@ -4,6 +4,7 @@ import (
 	"errors"
 	"math"
 	"math/rand"
+	"strings"
 	"time"
 
 	"github.com/TomSuzuki/recipe-wiki/pkg/object"
@@ -53,4 +54,27 @@ func (sd *ServerData) CreateNewID() (int, error) {
 		}
 	}
 	return 0, errors.New("cannot create new id")
+}
+
+// RecipeListFilterKeyword ...キーワードに一致するレシピリストを返す。
+func (sd *ServerData) RecipeListFilterKeyword(keyword string) []object.RecipeData {
+	var hitName []object.RecipeData
+	var hitIngredient []object.RecipeData
+
+	for i := range sd.Recipe {
+		r := sd.Recipe[i]
+		if strings.Contains(r.Name, keyword) {
+			hitName = append(hitName, r)
+			continue
+		}
+		for j := range r.IngredientList {
+			iName := r.IngredientList[j].Name
+			if strings.Contains(iName, keyword) {
+				hitIngredient = append(hitIngredient, r)
+				break
+			}
+		}
+	}
+
+	return append(hitName, hitIngredient...)
 }
