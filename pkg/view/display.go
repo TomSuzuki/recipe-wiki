@@ -40,3 +40,8 @@ func RecipePageView(data object.RecipePageData) template.HTML {
 func WritePageView(data object.WritePageData) template.HTML {
 	return createHTML("templates/write.html", data)
 }
+
+// MarkdownPageView ...マークダウン表示ページの表示。
+func MarkdownPageView(data object.MarkdownPageData) template.HTML {
+	return createHTML("templates/markdown.html", data)
+}

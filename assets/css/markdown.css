@@ -1,0 +1,19 @@
+#frame_markdown {
+    display            : grid;
+    grid-auto-columns  : 1fr auto;
+    grid-auto-rows     : auto 1fr;
+    grid-template-areas: "markdown_title markdown_edit""markdown markdown";
+    min-height         : 100%;
+}
+
+#markdown_title {
+    grid-area: markdown_title;
+}
+
+#markdown_edit {
+    grid-area: markdown_edit;
+}
+
+#markdown {
+    grid-area: markdown;
+}

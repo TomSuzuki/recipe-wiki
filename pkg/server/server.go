@@ -23,6 +23,8 @@ func Router(ctrl controller.Controller) (router *gin.Engine) {
 
 	router.GET("/write", ctrl.WritePageController)
 
+	router.GET("/markdown", ctrl.MarkdownPageController)
+
 	// no route
 	router.GET("", ctrl.TopPageController)
 	//router.NoRoute(ctrl.ErrorPageController)
