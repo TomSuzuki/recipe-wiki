@@ -48,7 +48,7 @@ func (sd *ServerData) SaveRecipeData(data object.RecipeData) error {
 func (sd *ServerData) CreateNewID() (int, error) {
 	rand.Seed(time.Now().UnixNano())
 	for i := 0; i < 1024; i++ {
-		newID := rand.Intn(2*math.MaxInt32) + math.MinInt32
+		newID := rand.Intn(2*math.MaxInt16) + math.MinInt16
 		if _, err := sd.GetRecipeData(newID); err != nil {
 			return newID, nil
 		}
