@@ -82,3 +82,87 @@
 #recipe_steps li {
     padding-bottom: 1.5em;
 }
+
+#recipe_open_ingredientList {
+    display: none;
+}
+
+#recipe_dialog_back {
+    display: none;
+}
+
+@media (max-width: 599px) {
+    #frame_recipe {
+        grid-template-rows   : 1fr;
+        grid-template-columns: 1fr;
+        grid-template-areas  : "recipe_details""recipe_steps""recipe_edit";
+    }
+
+    #recipe_details h1 {
+        font-size    : x-large;
+        margin-bottom: 2em;
+        border-bottom: 2px solid var(--color_dolphinGray);
+    }
+
+    #recipe_ingredients {
+        display: none;
+    }
+
+    #recipe_edit {
+        text-align: center;
+    }
+
+    #recipe_steps {
+        margin: 1em 0;
+    }
+
+    #recipe_steps p {
+        padding: 0;
+    }
+
+    #recipe_open_ingredientList {
+        display: block;
+        height : 3.5em;
+        width  : 100%;
+    }
+
+    #recipe_open_ingredientList_button {
+        text-align             : center;
+        position               : fixed;
+        bottom                 : 0;
+        left                   : 0;
+        width                  : calc(100% - 2.5em);
+        height                 : 3.5em;
+        background-color       : var(--color_snowWhite);
+        box-shadow             : 0 -4px 4px rgba(0, 0, 0, .15);
+        border-top-left-radius : 1em;
+        border-top-right-radius: 1em;
+    }
+
+    #recipe_open_ingredientList_button_inner {
+        position : absolute;
+        top      : 50%;
+        left     : 50%;
+        transform: translateX(-50%) translateY(-50%);
+        width    : 100%;
+        color    : var(--color_kuriIro);
+    }
+
+    #recipe_ingredients {
+        position : fixed;
+        z-index  : 990;
+        top      : 50%;
+        left     : calc(50% - 1.25em);
+        transform: translateX(-50%) translateY(-50%);
+        width    : 80vw;
+    }
+
+    #recipe_dialog_back {
+        position        : fixed;
+        top             : 0;
+        left            : 0;
+        height          : 100%;
+        width           : calc(100% - 2.5em);
+        background-color: rgba(0, 0, 0, .5);
+    }
+}

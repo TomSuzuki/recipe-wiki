@@ -21,3 +21,21 @@
 #markdown {
     grid-area: markdown;
 }
+
+@media (max-width: 599px) {
+    #frame_markdown {
+        grid-auto-columns  : auto;
+        grid-auto-rows     : auto auto 1fr;
+        grid-template-areas: "markdown_title""markdown_edit""markdown";
+    }
+
+    #markdown_title {
+        width: 100%;
+    }
+
+    #markdown_edit,
+    #markdown_save {
+        text-align   : right;
+        margin-bottom: 1em;
+    }
+}
