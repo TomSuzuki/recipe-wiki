@@ -49,6 +49,7 @@ type Ingredient struct {
 
 // MarkdownPageData ...マークダウンページ表示用のデータです。
 type MarkdownPageData struct {
+	MarkdownEdit  bool
 	MarkdownTitle string
 	MarkdownText  string
 	MarkdownHTML  template.HTML

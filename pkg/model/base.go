@@ -3,6 +3,7 @@ package model
 import (
 	"encoding/json"
 	"io/ioutil"
+	"os"
 
 	"github.com/TomSuzuki/recipe-wiki/pkg/config"
 	"github.com/TomSuzuki/recipe-wiki/pkg/object"
@@ -29,6 +30,7 @@ type ServerData struct {
 
 // Init ...検索データを初期化します。
 func Init() *ServerData {
+	os.Mkdir(config.MediaFolder, 0777)
 	var serverData ServerData
 	serverData = loadRecipe()
 	return &serverData

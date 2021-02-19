@@ -24,6 +24,7 @@ func Router(ctrl controller.Controller) (router *gin.Engine) {
 	router.GET("/write", ctrl.WritePageController)
 
 	router.GET("/markdown", ctrl.MarkdownPageController)
+	router.POST("/markdown/data", ctrl.MarkdownPostController)
 
 	// no route
 	router.GET("", ctrl.TopPageController)

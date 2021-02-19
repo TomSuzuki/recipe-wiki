@@ -1,5 +1,10 @@
-<div id="frame_markdown">
+<form id="frame_markdown">
     <h1 id="markdown_title">{{.MarkdownTitle}}</h1>
-    <div id="markdown_edit"> <a class="button" href="#">編集する</a></div>
+    {{if .MarkdownEdit}}
+    <div id="markdown_save"> <a class="button" href="javascript:markdownSave();">保存する</a></div>
+    <textarea id="markdown" name="text">{{.MarkdownText}}</textarea>
+    {{else}}
+    <div id="markdown_edit"> <a class="button" href="javascript:markdownEdit();">編集する</a></div>
     <div id="markdown">{{.MarkdownHTML}}</div>
-</div>
+    {{end}}
+</form>
