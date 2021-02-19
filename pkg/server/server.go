@@ -16,8 +16,11 @@ func Router(ctrl controller.Controller) (router *gin.Engine) {
 
 	// route
 	router.GET("/top", ctrl.TopPageController)
+
 	router.GET("/recipe", ctrl.RecipePageController)
 	router.GET("/recipe/data", ctrl.RecipeDataController)
+	router.POST("/recipe/data", ctrl.RecipePostController)
+
 	router.GET("/write", ctrl.WritePageController)
 
 	// no route

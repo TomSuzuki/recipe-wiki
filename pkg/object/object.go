@@ -34,6 +34,13 @@ type RecipeData struct {
 	ImagePath      string       `json:"image_path"`
 }
 
+// RecipePostData ...POST時に受け取るデータです。
+type RecipePostData struct {
+	RecipeData
+	ID        *int   `json:"id"`
+	ImageData string `json:"image_base64"`
+}
+
 // Ingredient ...材料のデータです。
 type Ingredient struct {
 	Name     string `json:"ingredient_name"`
