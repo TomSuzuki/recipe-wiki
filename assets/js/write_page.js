@@ -21,7 +21,7 @@ function saveRecipe() {
     if (id !== null) json["id"] = Number(id);
 
     // ingredients
-    let ingredients = document.getElementById("write_ingredients").textContent.split("\n");
+    let ingredients = document.getElementById("write_ingredients").value.split("\n");
     for (let i in ingredients) {
         let ing = ingredients[i].split(",");
         if (ing.length !== 2) continue;
@@ -32,7 +32,7 @@ function saveRecipe() {
     }
 
     // steps
-    let steps = document.getElementById("write_steps").textContent.split("\n");
+    let steps = document.getElementById("write_steps").value.split("\n");
     for (let i in steps) if (steps[i] !== "") json["steps"].push(steps[i]);
 
     // image_base64
@@ -44,6 +44,8 @@ function saveRecipe() {
     let img = document.getElementById("write_image").files;
     if (img.length > 0) fr.readAsDataURL(img[0]);
     else send(json);
+
+    console.log(json["ingredients"]);
 
     return;
 
