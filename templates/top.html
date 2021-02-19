@@ -1,9 +1,21 @@
 <div id="top_frame">
-    {{range .RecipeDataList}}
-    <a class="recipe_select_frame" href="/recipe?id={{.ID}}">
-        <h3>{{.Name}}</h3>
-        <img class="recipe_img" src="/data/{{.ImagePath}}"
-            onerror="this.onerror = null; this.src=`/assets/img/noimage_${1 + Math.floor(Math.random() * Math.floor(4))}.jpg`;">
-    </a>
-    {{end}}
+    <div id="top_search" class="center">
+        <input type="search" placeholder="検索" id="search_input"
+            onchange="javascript:location.href=`?keyword=${document.getElementById('search_input').value}`;"
+            value="{{.Keyword}}">
+        {{with .Keyword}}<p>- 「{{.}}」の検索結果 -</p>{{end}}
+    </div>
+    <div id="top_recipe_list">
+        {{range .RecipeDataList}}
+        <a class="recipe_select_frame" href="/recipe?id={{.ID}}">
+            <h3>{{.Name}}</h3>
+            <img class="recipe_img" src="/data/{{.ImagePath}}"
+                onerror="this.onerror = null; this.src=`/assets/img/noimage_${1 + Math.floor(Math.random() * Math.floor(4))}.jpg`;">
+        </a>
+        {{else}}
+        <div class="center">
+            <h3>データが見つかりませんでした。</h3>
+        </div>
+        {{end}}
+    </div>
 </div>
