@@ -1,6 +1,6 @@
 #index {
     display              : grid;
-    grid-template-columns: 8em 1fr;
+    grid-template-columns: auto 1fr;
     grid-template-rows   : 2em 1fr;
     grid-template-areas  : ". top""menu frame";
     background-color     : var(--color_dolphinGray);
@@ -22,4 +22,16 @@
 
 #menu {
     grid-area: menu;
+}
+
+@media (max-width: 599px) {
+    #index {
+        grid-template-areas  : "top top""frame menu";
+        grid-template-columns: 1fr auto;
+        grid-template-rows   : 1em 1fr;
+    }
+
+    #frame {
+        padding: 1em;
+    }
 }
