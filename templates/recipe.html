@@ -1,0 +1,53 @@
+<div id="frame_recipe">
+    <div id="recipe_edit">
+        <a class="button" href="/write?id={{.RecipeData.ID}}">編集する</a>
+    </div>
+    <div id="recipe_details">
+        <h1>{{.RecipeData.Name}}</h1>
+        <div class="tape">
+            <img class="recipe_img" src="/data/{{.RecipeData.ImagePath}}"
+                onerror="this.onerror = null; this.src=`/assets/img/noimage_${1 + Math.floor(Math.random() * Math.floor(4))}.jpg`;">
+        </div>
+        <p>おすすめ度：
+            {{if eq .RecipeData.Evaluation 1 }}★☆☆☆☆{{end}}
+            {{if eq .RecipeData.Evaluation 2 }}★★☆☆☆{{end}}
+            {{if eq .RecipeData.Evaluation 3 }}★★★☆☆{{end}}
+            {{if eq .RecipeData.Evaluation 4 }}★★★★☆{{end}}
+            {{if eq .RecipeData.Evaluation 5 }}★★★★★{{end}}
+        </p>
+    </div>
+    <div id="recipe_ingredients">
+        <table>
+            <thead>
+                <tr>
+                    <th colspan="2">材料</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{range .RecipeData.IngredientList}}
+                <tr>
+                    <td>{{.Name}}</td>
+                    <td>{{.Quantity}}</td>
+                </tr>
+                {{else}}
+                <tr>
+                    <td colspan="2">記録がありません。</td>
+                </tr>
+                {{end}}
+            </tbody>
+        </table>
+    </div>
+    <ol id="recipe_steps">
+        {{range .RecipeData.StepList}}
+        <li>{{.}}</li>
+        {{else}}
+        <p>記録がありません。</p>
+        {{end}}
+    </ol>
+    <a id="recipe_dialog_back" href="javascript:switchIngredientList();"></a>
+    <div id="recipe_open_ingredientList">
+        <a id="recipe_open_ingredientList_button" href="javascript:switchIngredientList();">
+            <div id="recipe_open_ingredientList_button_inner">材料の表示</div>
+        </a>
+    </div>
+</div>

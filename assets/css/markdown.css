@@ -1,0 +1,41 @@
+#frame_markdown {
+    display            : grid;
+    grid-auto-columns  : 1fr auto;
+    grid-auto-rows     : auto 1fr;
+    grid-template-areas: "markdown_title markdown_edit""markdown markdown";
+    min-height         : 100%;
+}
+
+#markdown_title {
+    grid-area    : markdown_title;
+    border-bottom: 2px solid var(--color_dolphinGray);
+    margin-right : 2em;
+    padding-left : .5em;
+    box-sizing   : border-box;
+}
+
+#markdown_edit {
+    grid-area: markdown_edit;
+}
+
+#markdown {
+    grid-area: markdown;
+}
+
+@media (max-width: 599px) {
+    #frame_markdown {
+        grid-auto-columns  : auto;
+        grid-auto-rows     : auto auto 1fr;
+        grid-template-areas: "markdown_title""markdown_edit""markdown";
+    }
+
+    #markdown_title {
+        width: 100%;
+    }
+
+    #markdown_edit,
+    #markdown_save {
+        text-align   : right;
+        margin-bottom: 1em;
+    }
+}

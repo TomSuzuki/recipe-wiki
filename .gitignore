@@ -1,0 +1,6 @@
+
+temp/
+data/*
+log/
+*.bk
+*.test
